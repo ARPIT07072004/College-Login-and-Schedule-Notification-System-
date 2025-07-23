@@ -1,0 +1,120 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE profiles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    full_name VARCHAR(100),
+    email VARCHAR(100),
+    enrollment_no VARCHAR(50),
+    batch VARCHAR(20),
+    father_name VARCHAR(100),
+    phone_number VARCHAR(15),
+    birth_date DATE,
+    gender ENUM('Male', 'Female', 'Other'),
+    address_line1 VARCHAR(255),
+    address_line2 VARCHAR(255),
+    country VARCHAR(100),
+    city VARCHAR(100),
+    state VARCHAR(100),
+    postal_code VARCHAR(20),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE timetables (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    batch VARCHAR(10) NOT NULL,
+    day VARCHAR(10) NOT NULL,
+    period_1 VARCHAR(255),
+    period_2 VARCHAR(255),
+    period_3 VARCHAR(255),
+    period_4 VARCHAR(255),
+    period_5 VARCHAR(255),
+    period_6 VARCHAR(255),
+    period_7 VARCHAR(255),
+    period_8 VARCHAR(255)
+);
+
+
+INSERT INTO timetables (batch, day, period_1, period_2, period_3, period_4, period_5, period_6, period_7, period_8)
+VALUES
+-- Monday Schedule for All Batches
+('B1', 'Monday', 'CL01<br>DS', 'CL01<br>DS', 'CS1<br>ES-2', 'G1<br>DS', '', 'TS1<br>DS&W', 'TR1<br>TFCS', ''),
+('B2', 'Monday', 'CL02<br>DS-LAB', 'CL02<br>DS-LAB', 'CS2<br>ES-2', 'G2<br>DS', '', 'TS2<br>DS&W', 'TR2<br>TFCS', ''),
+('B3', 'Monday', 'CL03<br>DS', 'CL03<br>DS', 'CS3<br>ES-2', 'G3<br>DS', '', 'TS3<br>DS&W', 'TR3<br>TFCS', ''),
+('B4', 'Monday', 'CL04<br>DS-LAB', 'CL04<br>DS-LAB', 'CS4<br>ES-2', 'G4<br>DS', '', 'TS4<br>DS&W', 'TR4<br>TFCS', ''),
+('B5', 'Monday', 'CL05<br>DS', 'CL05<br>DS', 'CS5<br>ES-2', 'G5<br>DS', '', 'TS5<br>DS&W', 'TR5<br>TFCS', ''),
+('B6', 'Monday', 'CL06<br>DS-LAB', 'CL06<br>DS-LAB', 'CS6<br>ES-2', 'G6<br>DS', '', 'TS6<br>DS&W', 'TR6<br>TFCS', ''),
+('B7', 'Monday', 'CL07<br>DS', 'CL07<br>DS', 'CS7<br>ES-2', 'G7<br>DS', '', 'TS7<br>DS&W', 'TR7<br>TFCS', ''),
+('B8', 'Monday', 'CL08<br>DS-LAB', 'CL08<br>DS-LAB', 'CS8<br>ES-2', 'G8<br>DS', '', 'TS8<br>DS&W', 'TR8<br>TFCS', ''),
+('B9', 'Monday', 'CL09<br>DS', 'CL09<br>DS', 'CS9<br>ES-2', 'G9<br>DS', '', 'TS9<br>DS&W', 'TR9<br>TFCS', ''),
+('B10', 'Monday', 'CL10<br>DS-LAB', 'CL10<br>DS-LAB', 'CS10<br>ES-2', 'G10<br>DS', '', 'TS10<br>DS&W', 'TR10<br>TFCS', ''),
+
+-- Tuesday Schedule for All Batches
+('B1', 'Tuesday', 'CL01<br>DS&W-LAB', 'CL01<br>DS&W-LAB', 'FF1<br>DS&W', 'FF2<br>TFCS', '', 'TS1<br>Eco', '', ''),
+('B2', 'Tuesday', 'CL02<br>DS&W-LAB', 'CL02<br>DS&W-LAB', 'FF2<br>DS&W', 'FF3<br>TFCS', '', 'TS2<br>Eco', '', ''),
+('B3', 'Tuesday', 'CL03<br>DS&W-LAB', 'CL03<br>DS&W-LAB', 'FF3<br>DS&W', 'FF4<br>TFCS', '', 'TS3<br>Eco', '', ''),
+('B4', 'Tuesday', 'CL04<br>DS&W-LAB', 'CL04<br>DS&W-LAB', 'FF4<br>DS&W', 'FF5<br>TFCS', '', 'TS4<br>Eco', '', ''),
+('B5', 'Tuesday', 'CL05<br>DS&W-LAB', 'CL05<br>DS&W-LAB', 'FF5<br>DS&W', 'FF6<br>TFCS', '', 'TS5<br>Eco', '', ''),
+('B6', 'Tuesday', 'CL06<br>DS&W-LAB', 'CL06<br>DS&W-LAB', 'FF6<br>DS&W', 'FF7<br>TFCS', '', 'TS6<br>Eco', '', ''),
+('B7', 'Tuesday', 'CL07<br>DS&W-LAB', 'CL07<br>DS&W-LAB', 'FF7<br>DS&W', 'FF8<br>TFCS', '', 'TS7<br>Eco', '', ''),
+('B8', 'Tuesday', 'CL08<br>DS&W-LAB', 'CL08<br>DS&W-LAB', 'FF8<br>DS&W', 'FF9<br>TFCS', '', 'TS8<br>Eco', '', ''),
+('B9', 'Tuesday', 'CL09<br>DS&W-LAB', 'CL09<br>DS&W-LAB', 'FF9<br>DS&W', 'FF10<br>TFCS', '', 'TS9<br>Eco', '', ''),
+('B10', 'Tuesday', 'CL10<br>DS&W-LAB', 'CL10<br>DS&W-LAB', 'FF10<br>DS&W', 'FF11<br>TFCS', '', 'TS10<br>Eco', '', ''),
+
+-- Continue the pattern for Wednesday to Saturday for all batches
+('B1', 'Wednesday', 'CL01<br>DS', 'G1<br>TFCS', '', 'TS1<br>ES-2', '', '', '', ''),
+('B2', 'Wednesday', 'CL02<br>DS', 'G2<br>TFCS', '', 'TS2<br>ES-2', '', '', '', ''),
+('B3', 'Wednesday', 'CL03<br>DS', 'G3<br>TFCS', '', 'TS3<br>ES-2', '', '', '', ''),
+('B4', 'Wednesday', 'CL04<br>DS', 'G4<br>TFCS', '', 'TS4<br>ES-2', '', '', '', ''),
+('B5', 'Wednesday', 'CL05<br>DS', 'G5<br>TFCS', '', 'TS5<br>ES-2', '', '', '', ''),
+('B6', 'Wednesday', 'CL06<br>DS', 'G6<br>TFCS', '', 'TS6<br>ES-2', '', '', '', ''),
+('B7', 'Wednesday', 'CL07<br>DS', 'G7<br>TFCS', '', 'TS7<br>ES-2', '', '', '', ''),
+('B8', 'Wednesday', 'CL08<br>DS', 'G8<br>TFCS', '', 'TS8<br>ES-2', '', '', '', ''),
+('B9', 'Wednesday', 'CL09<br>DS', 'G9<br>TFCS', '', 'TS9<br>ES-2', '', '', '', ''),
+('B10', 'Wednesday', 'CL10<br>DS', 'G10<br>TFCS', '', 'TS10<br>ES-2', '', '', '', '');
+
+
+-- Thursday Schedule for All Batches
+INSERT INTO timetables (batch, day, period_1, period_2, period_3, period_4, period_5, period_6, period_7, period_8)
+VALUES
+('B1', 'Thursday', 'FF1<br>ES-2', 'LT1<br>Eco', '', 'FF2<br>TFCS', '', 'TS1<br>DS', 'CL01<br>DS-LAB', 'CL01<br>DS-LAB'),
+('B2', 'Thursday', 'FF2<br>ES-2', 'LT2<br>Eco', '', 'FF3<br>TFCS', '', 'TS2<br>DS', 'CL02<br>DS-LAB', 'CL02<br>DS-LAB'),
+('B3', 'Thursday', 'FF3<br>ES-2', 'LT3<br>Eco', '', 'FF4<br>TFCS', '', 'TS3<br>DS', 'CL03<br>DS-LAB', 'CL03<br>DS-LAB'),
+('B4', 'Thursday', 'FF4<br>ES-2', 'LT4<br>Eco', '', 'FF5<br>TFCS', '', 'TS4<br>DS', 'CL04<br>DS-LAB', 'CL04<br>DS-LAB'),
+('B5', 'Thursday', 'FF5<br>ES-2', 'LT5<br>Eco', '', 'FF6<br>TFCS', '', 'TS5<br>DS', 'CL05<br>DS-LAB', 'CL05<br>DS-LAB'),
+('B6', 'Thursday', 'FF6<br>ES-2', 'LT6<br>Eco', '', 'FF7<br>TFCS', '', 'TS6<br>DS', 'CL06<br>DS-LAB', 'CL06<br>DS-LAB'),
+('B7', 'Thursday', 'FF7<br>ES-2', 'LT7<br>Eco', '', 'FF8<br>TFCS', '', 'TS7<br>DS', 'CL07<br>DS-LAB', 'CL07<br>DS-LAB'),
+('B8', 'Thursday', 'FF8<br>ES-2', 'LT8<br>Eco', '', 'FF9<br>TFCS', '', 'TS8<br>DS', 'CL08<br>DS-LAB', 'CL08<br>DS-LAB'),
+('B9', 'Thursday', 'FF9<br>ES-2', 'LT9<br>Eco', '', 'FF10<br>TFCS', '', 'TS9<br>DS', 'CL09<br>DS-LAB', 'CL09<br>DS-LAB'),
+('B10', 'Thursday', 'FF10<br>ES-2', 'LT10<br>Eco', '', 'FF11<br>TFCS', '', 'TS10<br>DS', 'CL10<br>DS-LAB', 'CL10<br>DS-LAB'),
+
+-- Friday Schedule for All Batches
+('B1', 'Friday', 'BEL1<br>ES-LAB', 'BEL1<br>ES-LAB', 'CR101<br>DS&W', '', '', 'FF1<br>ES-2', 'FF1<br>Eco', ''),
+('B2', 'Friday', 'BEL2<br>ES-LAB', 'BEL2<br>ES-LAB', 'CR102<br>DS&W', '', '', 'FF2<br>ES-2', 'FF2<br>Eco', ''),
+('B3', 'Friday', 'BEL3<br>ES-LAB', 'BEL3<br>ES-LAB', 'CR103<br>DS&W', '', '', 'FF3<br>ES-2', 'FF3<br>Eco', ''),
+('B4', 'Friday', 'BEL4<br>ES-LAB', 'BEL4<br>ES-LAB', 'CR104<br>DS&W', '', '', 'FF4<br>ES-2', 'FF4<br>Eco', ''),
+('B5', 'Friday', 'BEL5<br>ES-LAB', 'BEL5<br>ES-LAB', 'CR105<br>DS&W', '', '', 'FF5<br>ES-2', 'FF5<br>Eco', ''),
+('B6', 'Friday', 'BEL6<br>ES-LAB', 'BEL6<br>ES-LAB', 'CR106<br>DS&W', '', '', 'FF6<br>ES-2', 'FF6<br>Eco', ''),
+('B7', 'Friday', 'BEL7<br>ES-LAB', 'BEL7<br>ES-LAB', 'CR107<br>DS&W', '', '', 'FF7<br>ES-2', 'FF7<br>Eco', ''),
+('B8', 'Friday', 'BEL8<br>ES-LAB', 'BEL8<br>ES-LAB', 'CR108<br>DS&W', '', '', 'FF8<br>ES-2', 'FF8<br>Eco', ''),
+('B9', 'Friday', 'BEL9<br>ES-LAB', 'BEL9<br>ES-LAB', 'CR109<br>DS&W', '', '', 'FF9<br>ES-2', 'FF9<br>Eco', ''),
+('B10', 'Friday', 'BEL10<br>ES-LAB', 'BEL10<br>ES-LAB', 'CR110<br>DS&W', '', '', 'FF10<br>ES-2', 'FF10<br>Eco', ''),
+
+-- Saturday Schedule for All Batches
+('B1', 'Saturday', '', 'FF1<br>DS&W', 'CS1<br>DS', '', '', '', '', ''),
+('B2', 'Saturday', '', 'FF2<br>DS&W', 'CS2<br>DS', '', '', '', '', ''),
+('B3', 'Saturday', '', 'FF3<br>DS&W', 'CS3<br>DS', '', '', '', '', ''),
+('B4', 'Saturday', '', 'FF4<br>DS&W', 'CS4<br>DS', '', '', '', '', ''),
+('B5', 'Saturday', '', 'FF5<br>DS&W', 'CS5<br>DS', '', '', '', '', ''),
+('B6', 'Saturday', '', 'FF6<br>DS&W', 'CS6<br>DS', '', '', '', '', ''),
+('B7', 'Saturday', '', 'FF7<br>DS&W', 'CS7<br>DS', '', '', '', '', ''),
+('B8', 'Saturday', '', 'FF8<br>DS&W', 'CS8<br>DS', '', '', '', '', ''),
+('B9', 'Saturday', '', 'FF9<br>DS&W', 'CS9<br>DS', '', '', '', '', ''),
+('B10', 'Saturday', '', 'FF10<br>DS&W', 'CS10<br>DS', '', '', '', '', '');

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CZ:wght@100..400&family=Playwrite+NZ:wght@100..400&display=swap" rel="stylesheet">
+    <title>Homepage</title>
+    <style type="text/css">
+        * {
+            padding: 0; 
+            margin: 0; 
+            box-sizing: border-box;
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-in; /* Slow down the fade-in animation to 2 seconds */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0; /* Start fully transparent */
+            }
+            100% {
+                opacity: 1; /* End fully opaque */
+            }
+        }
+
+        header {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url('Images/Coffee.jpg');
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column; /* Stack logo and button container */
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+        }
+
+        nav {
+            color: white;
+            text-align: center; /* Center text within nav */
+            display: flex;
+            flex-direction: column; /* Stack logo and buttons */
+            align-items: center; /* Center items horizontally */
+        }
+
+        .logo {
+            font-family: "Playwrite NZ", sans-serif;
+            font-size: 3em;
+            letter-spacing: 2px;
+            padding-top: 20px; /* Add padding instead of margin */
+            margin-bottom: 40px; /* Space below the logo */
+            animation: fadeIn 2s ease-in; /* Apply fade-in animation with 2 seconds duration */
+        }
+
+        .button-container {
+            display: flex; /* Use flexbox for button alignment */
+            flex-direction: column; /* Stack buttons vertically */
+            justify-content: center; /* Center buttons vertically */
+            align-items: center; /* Center buttons horizontally */
+        }
+
+        .button {
+            width: 200px; /* Fixed width for all buttons */
+            height: 60px; /* Fixed height for all buttons */
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+            margin: 10px; /* Margin between buttons */
+            border-radius: 10px; /* Rounded corners */
+            cursor: pointer;
+            font-size: 1.2em; /* Enlarged font size */
+            transition: background-color 0.3s, transform 0.3s; /* Add transform for hover effect */
+            backdrop-filter: blur(10px); /* Glass blur effect */
+            text-decoration: none; /* Remove underline from links */
+            display: flex; /* Use flexbox to center text */
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Darker semi-transparent background on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"> <!-- Fade-in class is applied directly to the logo -->
+                Welcome to Campus-Conect
+            </div>
+            <div class="button-container">
+                <a class="button" href="index.php">Home</a>
+                <a class="button" href="Profile.php">Profile</a>
+                <a class="button" href="TimeTable.php">TimeTable</a>
+                <a class="button" href="ToDoList.html">To-do List</a>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>

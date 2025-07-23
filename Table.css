@@ -1,0 +1,55 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('Images/Workspace.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(145, 139, 134, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+th, td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+th {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+h1 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
